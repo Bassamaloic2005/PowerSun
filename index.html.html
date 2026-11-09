@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PowerSun – Contrôleurs de charge solaires</title>
+<meta name="description" content="PowerSun, fabricant suisse de contrôleurs de charge solaires PWM et MPPT, du grade 0 au grade 5.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10294a;--deep:#0a1c35;--gold:#d9a93e;--bg:#f9f9f7;--bg2:#fff;--ink:#0f1b2d;--mut:#566175;--line:#e2dfd5;--bar:#e9e6db;--ph:#eef0f3}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a30;--bg2:#10294a;--ink:#f3f1ea;--mut:#a9b3c4;--line:#24406a;--bar:#1b3558;--ph:#0d2342}}
+:root[data-theme="dark"]{--bg:#0b1a30;--bg2:#10294a;--ink:#f3f1ea;--mut:#a9b3c4;--line:#24406a;--bar:#1b3558;--ph:#0d2342}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--deep);z-index:50}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(10,28,53,.92);backdrop-filter:blur(10px);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid rgba(217,169,62,.3);color:#fff;transition:box-shadow .3s}
+nav .wrap{display:flex;align-items:center;gap:22px;height:64px;transition:height .3s}
+nav.sm{box-shadow:0 8px 26px rgba(0,0,0,.28)}nav.sm .wrap{height:48px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:.28em;font-weight:600;font-size:.95rem;margin-right:auto}
+.brand svg{width:34px;height:26px}
+nav a.l{text-decoration:none;font-size:.9rem;opacity:.85}nav a.l:hover{color:var(--gold);opacity:1}
+@media(max-width:820px){nav a.l{display:none}}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--gold);color:var(--deep);font:inherit;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--gold);cursor:pointer;transition:filter .2s,background .2s,color .2s}
+.btn:hover{filter:brightness(1.1)}.btn.o{background:transparent;color:var(--gold)}.btn.o:hover{background:var(--gold);color:var(--deep);filter:none}
+.btn.s{padding:8px 16px;font-size:.85rem}
+.btn:focus-visible,.chip:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,.card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#cn{background:var(--deep);color:var(--gold);border-radius:99px;padding:0 7px;margin-left:6px;font-size:.78rem}
+.hero{background:linear-gradient(120deg,#0a1c35,#10294a 30%,#1d467a 55%,#10294a 78%,#0a1c35);background-size:300% 300%;animation:flow 18s ease-in-out infinite;color:#fff;padding:120px 0 80px;overflow:hidden}
+@keyframes flow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+@media(min-width:840px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+h1{font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.1;margin:0 0 18px;font-weight:700;letter-spacing:-.01em}
+.hero p{max-width:34em;color:#c9d3e3;font-weight:300;font-size:1.08rem;margin:0 0 28px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}.hero .btn.o{color:#fff;border-color:rgba(255,255,255,.4)}.hero .btn.o:hover{color:var(--deep);border-color:var(--gold)}
+.hv{position:relative;max-width:440px;margin:auto;width:100%}
+.hv svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:rise 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+.glow{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.hero,.hv svg,.glow{animation:none}html{scroll-behavior:auto}}
+.facts{background:var(--deep);color:#fff;border-top:1px solid rgba(217,169,62,.35)}
+.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 28px;padding-top:26px;padding-bottom:26px}
+.facts b{color:var(--gold);font-size:1.5rem;display:block;line-height:1.2}.facts span{font-size:.88rem;color:#b9c4d6}
+section{padding:78px 0}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.2;margin:0 0 14px;letter-spacing:-.01em}
+.lead{color:var(--mut);max-width:38em;margin:0 0 34px}
+.about{display:grid;gap:36px;align-items:center}@media(min-width:840px){.about{grid-template-columns:.8fr 1.2fr}}
+.logo{background:var(--deep);border-radius:18px;padding:34px;max-width:340px;margin:auto;border:1px solid var(--gold);text-align:center;color:#fff;letter-spacing:.3em;font-weight:600}
+.logo svg{width:100%;display:block;margin-bottom:12px}
+.sites{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--line)}
+.sites li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}.sites span{color:var(--mut);text-align:right}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.pick{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr)) 2fr;align-items:end;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:20px;margin-bottom:30px}
+.pick label{display:block;font-size:.8rem;color:var(--mut);margin-bottom:4px}
+.pick input,.pick select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:inherit}
+#res{font-size:.92rem;min-height:3em}#res b{color:var(--gold)}
+@media(max-width:700px){.pick{grid-template-columns:1fr 1fr}#res{grid-column:1/-1}}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.bar select{margin-left:auto;padding:8px 12px;border-radius:99px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:inherit;font-size:.88rem}
+.chip{background:none;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:8px 18px;font:inherit;font-size:.88rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--gold);color:#fff}
+#list{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,28,53,.18);border-color:var(--gold)}
+.ph{position:relative;aspect-ratio:240/170;background:radial-gradient(circle at 50% 35%,var(--ph),transparent 75%),var(--bg2)}
+.ph svg,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.gb{position:absolute;top:12px;left:12px;background:var(--navy);color:var(--gold);font-weight:700;border-radius:99px;padding:2px 12px;font-size:.85rem;border:1px solid var(--gold)}
+.cb{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{margin:0;font-size:1.05rem}
+.tag{font-size:.76rem;color:var(--mut);font-weight:400}.tag.h{color:var(--gold);font-weight:600}
+.card p{margin:0;color:var(--mut);font-size:.88rem}
+.amp{height:6px;border-radius:9px;background:var(--bar);overflow:hidden;margin-top:6px}.amp i{display:block;height:100%;background:var(--gold)}
+.buy{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px}.buy b{font-size:1.2rem}
+.note{color:var(--mut);font-size:.85rem;margin-top:16px}
+.why{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.why div{border-top:3px solid var(--gold);padding-top:14px}.why h3{margin:0 0 6px;font-size:1.05rem}.why p{margin:0;color:var(--mut);font-size:.92rem}
+.refs{display:grid;gap:26px}@media(min-width:840px){.refs{grid-template-columns:repeat(3,1fr)}}
+.refs div{border-left:3px solid var(--gold);padding-left:18px}.refs h3{margin:0 0 6px;font-size:1.1rem}.refs p{margin:0;color:var(--mut);font-size:.94rem}.refs small{display:block;color:var(--gold);margin-top:10px;font-weight:600}
+.contact{background:var(--navy);color:#fff}.contact p{color:#c9d3e3}
+.ct{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}.contact .btn.o{color:#fff;border-color:rgba(255,255,255,.4)}.contact .btn.o:hover{color:var(--deep)}
+footer{background:var(--deep);color:#8fa0ba;padding:26px 0;font-size:.85rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:60;background:var(--bg2);color:var(--ink);border-left:1px solid var(--line);padding:calc(22px + env(safe-area-inset-top,0px)) 22px calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(105%);transition:transform .3s,visibility .3s;display:flex;flex-direction:column;visibility:hidden}
+aside.open{transform:none;visibility:visible}
+aside header{display:flex;justify-content:space-between;align-items:center}aside h3{margin:0}
+.xb{background:none;border:0;color:inherit;font-size:1.6rem;cursor:pointer}
+#ci{flex:1;overflow:auto;margin:14px 0}
+.ln{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}.ln small{color:var(--mut)}
+.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:none;color:inherit;cursor:pointer}
+.sum{font-size:.88rem;color:var(--mut);display:grid;gap:2px;margin-bottom:10px}.sum div{display:flex;justify-content:space-between}
+.tot{display:flex;justify-content:space-between;font-weight:700;margin-bottom:14px}
+dialog{border:1px solid var(--gold);border-radius:20px;padding:0;max-width:760px;width:calc(100% - 32px);background:var(--bg2);color:var(--ink)}
+dialog::backdrop{background:rgba(5,12,25,.7);backdrop-filter:blur(4px)}
+.md{display:grid;gap:0}@media(min-width:700px){.md{grid-template-columns:1fr 1fr}}
+.md .ph{aspect-ratio:auto;min-height:240px}.mi{padding:26px}.mi h3{margin:0 0 6px;font-size:1.3rem}
+.sp{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem}.sp td{padding:7px 0;border-bottom:1px solid var(--line)}.sp td:last-child{text-align:right;color:var(--mut)}
+.ft{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}.ft li{border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.78rem}
+#t{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--deep);color:#fff;border:1px solid var(--gold);padding:12px 20px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;z-index:70;max-width:90%;font-size:.9rem}
+#t.on{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#top" aria-label="PowerSun, accueil"><svg viewBox="100 60 200 150" aria-hidden="true"><path d="M140 205a60 60 0 0 1 120 0z" fill="#d9a93e"/><g stroke="#d9a93e" stroke-width="5" stroke-linecap="round"><line x1="200" y1="78" x2="200" y2="108"/><line x1="132" y1="118" x2="154" y2="136"/><line x1="268" y1="118" x2="246" y2="136"/></g><path d="M148 214h104l12 40H136z" fill="#16365f" stroke="#d9a93e" stroke-width="4"/></svg>POWER SUN</a>
+<a class="l" href="#apropos">À propos</a><a class="l" href="#boutique">Boutique</a><a class="l" href="#atouts">Pourquoi PowerSun</a><a class="l" href="#realisations">Réalisations</a><a class="l" href="#contact">Contact</a>
+<button class="btn o s" id="cb" aria-label="Ouvrir le panier">Panier<span id="cn">0</span></button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<h1>Des contrôleurs de charge suisses pour chaque chargeur solaire</h1>
+<p>PowerSun fabrique les contrôleurs de charge qui équipent les chargeurs solaires, du modèle d’entrée de gamme au contrôleur de grade 5. Trouvez le bon modèle en 10 secondes, puis commandez en ligne.</p>
+<div class="acts"><a class="btn" href="#boutique">Voir la boutique</a><a class="btn o" href="#choisir">Trouver mon contrôleur</a></div>
+</div>
+<div class="hv" id="hero-ill"></div>
+</div></header>
+
+<div class="facts"><div class="wrap">
+<div><b>Grades 0 à 5</b><span>toute la gamme de production</span></div>
+<div><b>Licence de grade 5</b><span>le plus haut niveau de fabrication</span></div>
+<div><b>3 implantations</b><span>Genève, Zurich et Madrid</span></div>
+<div><b>2 niveaux de qualité</b><span>standard et haute qualité</span></div>
+</div></div>
+
+<section id="apropos"><div class="wrap about">
+<div class="logo"><svg viewBox="100 60 200 150" role="img" aria-label="Logo PowerSun"><path d="M140 205a60 60 0 0 1 120 0z" fill="#d9a93e"/><g stroke="#d9a93e" stroke-width="5" stroke-linecap="round"><line x1="200" y1="78" x2="200" y2="108"/><line x1="132" y1="118" x2="154" y2="136"/><line x1="268" y1="118" x2="246" y2="136"/></g><path d="M148 214h104l12 40H136z" fill="#16365f" stroke="#d9a93e" stroke-width="4"/></svg>POWER SUN</div>
+<div>
+<h2>Fabricant de contrôleurs de charge, basé en Suisse</h2>
+<p class="lead" style="margin-bottom:0">Notre licence de grade 5 nous permet de produire tous les contrôleurs, du grade 0 au grade 5. Nous proposons des produits de qualité standard pour les petits budgets et des produits de haute qualité pour les installations exigeantes.</p>
+<ul class="sites"><li><b>Siège</b><span>Genève, Suisse</span></li><li><b>Filiale suisse</b><span>Zurich</span></li><li><b>Filiale européenne</b><span>Madrid, Espagne</span></li></ul>
+</div></div></section>
+
+<section id="boutique" class="alt"><div class="wrap">
+<h2>La gamme, du grade 0 au grade 5</h2>
+<p class="lead">Plus le grade monte, plus le contrôleur gère de courant et de fonctions. Cliquez sur un produit pour voir sa fiche technique.</p>
+<div class="pick" id="choisir">
+<div><label for="wp">Puissance des panneaux (W)</label><input id="wp" type="number" min="10" max="3000" step="10" value="300"></div>
+<div><label for="vb">Tension de la batterie</label><select id="vb"><option>12</option><option>24</option><option>48</option></select></div>
+<div id="res" aria-live="polite"></div>
+</div>
+<div class="bar" role="group" aria-label="Filtrer par qualité"><button class="chip" data-f="all" aria-pressed="true">Toute la gamme</button><button class="chip" data-f="S" aria-pressed="false">Standard</button><button class="chip" data-f="H" aria-pressed="false">Haute qualité</button>
+<select id="so" aria-label="Trier"><option value="g">Trier par grade</option><option value="pa">Prix croissant</option><option value="pd">Prix décroissant</option><option value="a">Courant maximal</option></select></div>
+<div id="list"></div>
+<p class="note">Prix unitaires indicatifs en francs suisses, hors TVA. Exemple de catalogue pour la démonstration.</p>
+</div></section>
+
+<section id="atouts"><div class="wrap">
+<h2>Pourquoi choisir PowerSun</h2>
+<p class="lead">Un contrôleur protège la batterie, qui est souvent le composant le plus cher d’une installation solaire.</p>
+<div class="why">
+<div><h3>PWM ou MPPT, on vous guide</h3><p>Le PWM suffit aux petits systèmes. Le MPPT récupère jusqu’à 30 % d’énergie en plus quand les panneaux sont froids ou sous-dimensionnés.</p></div>
+<div><h3>Protections intégrées</h3><p>Surcharge, décharge profonde, court-circuit, inversion de polarité et surchauffe : chaque grade en couvre davantage.</p></div>
+<div><h3>Fabriqué sous licence de grade 5</h3><p>Une seule usine maîtrise toute la gamme, donc des composants et des tests homogènes.</p></div>
+<div><h3>Support en 3 villes</h3><p>Une équipe à Genève, Zurich et Madrid répond en français, allemand, anglais et espagnol.</p></div>
+</div></div></section>
+
+<section id="realisations" class="alt"><div class="wrap">
+<h2>Réalisations</h2>
+<p class="lead">Quelques exemples de chargeurs solaires équipés de contrôleurs PowerSun.</p>
+<div class="refs">
+<div><h3>Éclairage public autonome</h3><p>Lampadaires solaires d’une commune alpine, équipés de contrôleurs MPPT pour résister au froid et aux variations de lumière.</p><small>Contrôleur G4</small></div>
+<div><h3>Chargeur solaire nomade</h3><p>Série de chargeurs portables pour randonneurs, produite avec un partenaire allemand à partir de nos contrôleurs compacts.</p><small>Contrôleur G2</small></div>
+<div><h3>Kits d’énergie pour sites isolés</h3><p>Kits solaires livrés en Europe pour alimenter des abris et des stations de mesure sans réseau électrique.</p><small>Contrôleur G5</small></div>
+</div></div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Parlons de votre projet</h2>
+<p style="max-width:36em">Une commande en volume, une question technique ou un devis sur mesure : écrivez-nous ou appelez-nous, nous répondons sous un jour ouvré.</p>
+<div class="ct"><a class="btn" href="mailto:contact@powersun.ch?subject=Demande%20de%20devis%20PowerSun">contact@powersun.ch</a><a class="btn o" href="tel:+41225550142">+41 22 555 01 42</a></div>
+<p style="margin-top:22px">PowerSun SA, Rue du Soleil 12, 1204 Genève, Suisse</p>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 PowerSun SA. Tous droits réservés.</span><span>Genève, Zurich, Madrid</span></div></footer>
+
+<dialog id="dg" aria-label="Fiche produit"><div class="md" id="dgc"></div></dialog>
+<aside id="cart" aria-label="Panier"><header><h3>Votre panier</h3><button class="xb" id="x" aria-label="Fermer le panier">×</button></header>
+<div id="ci"></div>
+<div class="sum"><div><span>Sous-total HT</span><span id="st">0,00 CHF</span></div><div><span>Livraison</span><span id="sh">0,00 CHF</span></div><div><span>TVA 8,1 %</span><span id="tv">0,00 CHF</span></div></div>
+<div class="tot"><span>Total TTC</span><span id="tt">0,00 CHF</span></div>
+<button class="btn" id="ok">Commander par e-mail</button>
+<p class="note" style="margin:8px 0 0">Livraison offerte dès 150 CHF HT.</p></aside>
+<div id="t" role="status"></div>
+
+<script>
+/* Photos réelles : déposez images/g0.jpg … images/g5.jpg à côté de ce fichier.
+   Tant qu'une photo est absente, l'illustration vectorielle s'affiche à sa place. */
+var P=[
+{g:0,n:"Contrôleur PWM 10 A",d:"12 V, protection de base. Pour petits chargeurs et lampes.",a:10,p:6.9,t:"S",v:[12],voc:30,eff:"≈ 75 %",ip:"IP20",f:["Surcharge","Court-circuit","3 LED"]},
+{g:1,n:"Contrôleur PWM 20 A",d:"12/24 V, protection surcharge et court-circuit.",a:20,p:9.9,t:"S",v:[12,24],voc:50,eff:"≈ 80 %",ip:"IP20",f:["Surcharge","Court-circuit","Polarité inversée","3 LED"]},
+{g:2,n:"Contrôleur PWM 30 A à écran",d:"12/24 V, écran LCD et sortie USB.",a:30,p:14.5,t:"S",v:[12,24],voc:50,eff:"≈ 85 %",ip:"IP30",f:["Écran LCD","Sortie USB 5 V","Minuterie d’éclairage"]},
+{g:3,n:"Contrôleur MPPT 20 A",d:"Suivi du point de puissance maximale, meilleur rendement.",a:20,p:29,t:"H",v:[12,24,48],voc:100,eff:"≈ 96 %",ip:"IP32",f:["MPPT","Écran LCD","Dissipateur alu"]},
+{g:4,n:"Contrôleur MPPT 40 A Bluetooth",d:"Suivi de charge sur smartphone, compensation de température.",a:40,p:54,t:"H",v:[12,24,48],voc:150,eff:"≈ 98 %",ip:"IP33",f:["MPPT","Bluetooth","Sonde de température"]},
+{g:5,n:"Contrôleur MPPT 60 A Pro",d:"Le plus haut grade : multi-batteries, journal de données, protection renforcée.",a:60,p:89,t:"H",v:[12,24,48],voc:200,eff:"≈ 98,5 %",ip:"IP65",f:["MPPT","Multi-batteries","Journal de données","Boîtier étanche"]}];
+var cart={},f="all",$=function(i){return document.getElementById(i)};
+try{cart=JSON.parse(localStorage.getItem("ps-cart"))||{}}catch(e){}
+function fmt(n){return n.toFixed(2).replace(".",",")+" CHF"}
+function toast(m){var t=$("t");t.textContent=m;t.className="on";clearTimeout(toast.i);toast.i=setTimeout(function(){t.className=""},2600)}
+/* Illustration vectorielle d'un contrôleur */
+function ill(p,big){var m=p.t=="H",s='<svg viewBox="0 0 240 170" role="img" aria-label="'+p.n+'"><defs><linearGradient id="b'+p.g+(big?"m":"")+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d467a"/><stop offset="1" stop-color="#0f2a4d"/></linearGradient></defs>';
+s+='<ellipse cx="120" cy="158" rx="84" ry="6" fill="#000" opacity=".25"/><circle cx="26" cy="85" r="6" fill="none" stroke="#d9a93e" stroke-width="2"/><circle cx="214" cy="85" r="6" fill="none" stroke="#d9a93e" stroke-width="2"/>';
+s+='<rect x="36" y="16" width="168" height="130" rx="14" fill="url(#b'+p.g+(big?"m":"")+')" stroke="#d9a93e" stroke-width="2.5"/>';
+if(m){for(var i=0;i<9;i++)s+='<rect x="'+(52+i*17)+'" y="22" width="9" height="20" rx="2" fill="#0a1c35" opacity=".8"/>'}
+s+='<text x="120" y="'+(m?60:40)+'" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="3" fill="#d9a93e" font-family="Sora,sans-serif">POWER SUN</text>';
+if(p.g>=2){s+='<rect x="64" y="'+(m?68:50)+'" width="112" height="44" rx="6" fill="#0a1c35" stroke="#d9a93e" stroke-opacity=".5"/><text x="76" y="'+(m?91:73)+'" font-size="18" font-weight="700" fill="#7fe3a8" font-family="Sora,sans-serif">13.2V</text><text x="130" y="'+(m?91:73)+'" font-size="12" fill="#d9a93e" font-family="Sora,sans-serif">'+p.a+'A</text><rect x="76" y="'+(m?99:81)+'" width="88" height="5" rx="2.5" fill="#24406a"/><rect class="glow" x="76" y="'+(m?99:81)+'" width="'+(30+p.g*10)+'" height="5" rx="2.5" fill="#d9a93e"/>'}
+else{for(var j=0;j<3;j++)s+='<circle cx="'+(90+j*30)+'" cy="76" r="7" fill="'+(j==0?"#7fe3a8":"#24406a")+'"'+(j==0?' class="glow"':'')+'/>'}
+s+='<text x="52" y="132" font-size="11" font-weight="700" fill="#fff" font-family="Sora,sans-serif">G'+p.g+'</text><text x="188" y="132" text-anchor="end" font-size="9" fill="#b9c4d6" font-family="Sora,sans-serif">'+(m?"MPPT":"PWM")+' '+p.a+'A</text>';
+if(p.g==4)s+='<path d="M170 120l8 8-4 4v-16l4 4-8 8" fill="none" stroke="#6cb4ff" stroke-width="1.6" transform="translate(-20 -2)"/>';
+for(var k=0;k<4;k++)s+='<rect x="'+(60+k*34)+'" y="144" width="20" height="12" rx="2" fill="#d9a93e"/><rect x="66.5" y="148" width="7" height="3" fill="#10294a" transform="translate('+(k*34)+' 0)"/>';
+return s+'</svg>'}
+function photo(p,big){return '<div class="ph">'+ill(p,big)+'<img src="images/g'+p.g+'.jpg" alt="'+p.n+'" loading="lazy" onerror="this.remove()"></div>'}
+function drawList(){var l=P.filter(function(p){return f=="all"||p.t==f}),s=$("so").value;
+l.sort(function(a,b){return s=="pa"?a.p-b.p:s=="pd"?b.p-a.p:s=="a"?b.a-a.a:a.g-b.g});
+$("list").innerHTML=l.map(function(p){return '<article class="card" tabindex="0" data-o="'+p.g+'" aria-label="Fiche '+p.n+'">'+photo(p)+'<span class="gb">G'+p.g+'</span><div class="cb"><h3>'+p.n+'</h3><span class="tag'+(p.t=="H"?" h":"")+'">'+(p.t=="H"?"Haute qualité":"Standard")+' · '+p.v.join("/")+' V</span><p>'+p.d+'</p><div class="amp" title="'+p.a+' A"><i style="width:'+(p.a/60*100)+'%"></i></div><div class="buy"><b>'+fmt(p.p)+'</b><button class="btn s" data-add="'+p.g+'">Ajouter</button></div></div></article>'}).join("");reveal(".card")}
+function drawCart(){var n=0,s=0,h="";P.forEach(function(p){var q=cart[p.g];if(q){n+=q;s+=q*p.p;h+='<div class="ln"><div>G'+p.g+' – '+p.n+'<br><small>'+fmt(p.p)+' l’unité</small></div><div class="q"><button data-m="'+p.g+'" aria-label="Retirer un">−</button> '+q+' <button data-add="'+p.g+'" aria-label="Ajouter un">+</button></div></div>'}});
+var sh=n&&s<150?9.9:0,tv=(s+sh)*.081;
+$("ci").innerHTML=h||'<p style="color:var(--mut)">Votre panier est vide. Ajoutez un contrôleur depuis la boutique.</p>';
+$("cn").textContent=n;$("st").textContent=fmt(s);$("sh").textContent=sh?fmt(sh):"Offerte";$("tv").textContent=fmt(tv);$("tt").textContent=fmt(s+sh+tv);
+try{localStorage.setItem("ps-cart",JSON.stringify(cart))}catch(e){}}
+/* Assistant de choix : courant = puissance / tension x 1,25 de marge */
+function pick(){var w=+$("wp").value,v=+$("vb").value,r=$("res");if(!(w>0)){r.textContent="Entrez la puissance de vos panneaux.";return}
+var i=w/v*1.25,c=P.filter(function(p){return p.v.indexOf(v)>-1&&p.a>=i})[0];
+r.innerHTML=c?'Courant à gérer : <b>'+i.toFixed(1)+' A</b>. Modèle conseillé : <b>G'+c.g+' – '+c.n+'</b> ('+fmt(c.p)+'). <a href="#" data-o="'+c.g+'">Voir la fiche</a>':'Courant à gérer : <b>'+i.toFixed(1)+' A</b>. Au-delà de 60 A, <a href="#contact">contactez-nous</a> pour une solution sur mesure.'}
+function open_(g){var p=P[g];$("dgc").innerHTML=photo(p,1)+'<div class="mi"><h3>'+p.n+'</h3><span class="tag'+(p.t=="H"?" h":"")+'">Grade '+p.g+' · '+(p.t=="H"?"Haute qualité":"Standard")+'</span><p style="color:var(--mut);font-size:.92rem">'+p.d+'</p><ul class="ft">'+p.f.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><table class="sp"><tr><td>Courant maximal</td><td>'+p.a+' A</td></tr><tr><td>Tensions batterie</td><td>'+p.v.join(" / ")+' V</td></tr><tr><td>Tension panneau max</td><td>'+p.voc+' V</td></tr><tr><td>Rendement</td><td>'+p.eff+'</td></tr><tr><td>Protection</td><td>'+p.ip+'</td></tr></table><div class="buy"><b>'+fmt(p.p)+'</b><span><button class="btn s" data-add="'+p.g+'" data-c="1">Ajouter au panier</button> <button class="btn o s" id="dx">Fermer</button></span></div></div>';$("dg").showModal()}
+document.addEventListener("click",function(e){var b=e.target.closest("button,[data-o]");if(!b)return;
+if(b.dataset.add!==undefined){e.stopPropagation();var k=b.dataset.add;cart[k]=(cart[k]||0)+1;drawCart();if(!b.closest("aside"))toast("Ajouté au panier")}
+else if(b.dataset.m!==undefined){var k=b.dataset.m;cart[k]--;if(cart[k]<=0)delete cart[k];drawCart()}
+else if(b.dataset.f){f=b.dataset.f;document.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed",c==b)});drawList()}
+else if(b.id=="dx"){$("dg").close()}
+else if(b.dataset.o!==undefined){e.preventDefault();open_(+b.dataset.o)}});
+document.addEventListener("keydown",function(e){if(e.key=="Enter"&&e.target.classList&&e.target.classList.contains("card"))open_(+e.target.dataset.o)});
+$("dg").addEventListener("click",function(e){if(e.target==this)this.close()});
+$("so").onchange=drawList;$("wp").oninput=pick;$("vb").onchange=pick;
+$("cb").onclick=function(){$("cart").classList.add("open")};
+$("x").onclick=function(){$("cart").classList.remove("open")};
+$("ok").onclick=function(){var l=P.filter(function(p){return cart[p.g]});if(!l.length){toast("Votre panier est vide.");return}
+var b="Bonjour,\n\nJe souhaite commander :\n"+l.map(function(p){return"- "+cart[p.g]+" x G"+p.g+" "+p.n+" ("+fmt(p.p)+")"}).join("\n")+"\n\nTotal TTC : "+$("tt").textContent+"\n\nNom, adresse de livraison et téléphone :\n";
+location.href="mailto:contact@powersun.ch?subject="+encodeURIComponent("Commande PowerSun")+"&body="+encodeURIComponent(b)};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+function reveal(s){document.querySelectorAll(s).forEach(function(el,i){if(el.dataset.r)return;el.dataset.r=1;el.classList.add("rv");el.style.transitionDelay=(i%3)*90+"ms";io.observe(el)})}
+var nv=document.querySelector("nav");function sc(){nv.classList.toggle("sm",scrollY>40)}addEventListener("scroll",sc,{passive:true});sc();
+$("hero-ill").innerHTML=ill(P[4],1);
+drawList();drawCart();pick();
+reveal(".why>div,.refs>div,.facts .wrap>div");
+</script>
+</body>
+</html>
